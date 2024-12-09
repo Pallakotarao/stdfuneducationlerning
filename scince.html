@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Science Study</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e0f7fa;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #00796b;
+            color: white;
+            padding: 1em;
+            text-align: center;
+        }
+        main {
+            padding: 2em;
+        }
+        .section {
+            margin-bottom: 2em;
+        }
+        h2 {
+            color: #00796b;
+        }
+        .button {
+            background-color: #00796b;
+            color: white;
+            padding: 0.5em 1em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #004d40;
+        }
+        .experiment {
+            background-color: white;
+            padding: 1em;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2em;
+        }
+        .quiz {
+            background-color: white;
+            padding: 1em;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .output {
+            background-color: #f1f8e9;
+            padding: 1em;
+            border-radius: 8px;
+            margin-top: 1em;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Fun Science Study</h1>
+    <p>Explore, Learn, and Test Your Science Knowledge!</p>
+    <ul>
+    <li><a href="programming.html">Back Button</a></li>
+</ul>
+</header>
+
+<main>
+    <!-- Fun Science Experiment -->
+    <div class="section experiment">
+        <h2>Fun Experiment: Gravity Test</h2>
+        <p>Predict how long it will take for a ball to drop from a certain height:</p>
+        <label for="height">Height (meters):</label>
+        <input type="number" id="height" min="1" max="100" placeholder="Enter height">
+        <button class="button" onclick="calculateDropTime()">Calculate</button>
+        <div class="output" id="experiment-output">Result will appear here...</div>
+    </div>
+
+    <!-- Science Quiz -->
+    <div class="section quiz">
+        <h2>Science Quiz</h2>
+        <p>What planet is known as the Red Planet?</p>
+        <button class="button" onclick="checkAnswer('Mars')">Mars</button>
+        <button class="button" onclick="checkAnswer('Venus')">Venus</button>
+        <button class="button" onclick="checkAnswer('Jupiter')">Jupiter</button>
+        <p id="quiz-result"></p>
+    </div>
+
+    <!-- Fun Science Facts -->
+    <div class="section">
+        <h2>Did You Know?</h2>
+        <ul>
+            <li>Water can boil and freeze at the same time in a process called the "triple point".</li>
+            <li>Bananas are radioactive because they contain potassium-40, a radioactive isotope of potassium.</li>
+            <li>The speed of light is about 299,792 kilometers per second!</li>
+        </ul>
+    </div>
+</main>
+
+<script>
+    // Gravity Test Experiment
+    function calculateDropTime() {
+        const height = document.getElementById("height").value;
+        const gravity = 9.81; // Acceleration due to gravity (m/s^2)
+        if (height > 0) {
+            const time = Math.sqrt((2 * height) / gravity).toFixed(2);
+            document.getElementById("experiment-output").innerText = `It will take approximately ${time} seconds for the ball to hit the ground.`;
+        } else {
+            document.getElementById("experiment-output").innerText = "Please enter a valid height.";
+        }
+    }
+
+    // Science Quiz
+    function checkAnswer(answer) {
+        const result = document.getElementById("quiz-result");
+        if (answer === "Mars") {
+            result.textContent = "Correct! Mars is known as the Red Planet.";
+            result.style.color = "green";
+        } else {
+            result.textContent = "Oops! Try again.";
+            result.style.color = "red";
+        }
+    }
+</script>
+
+</body>
+</html>

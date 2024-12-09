@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crazy Student Fun Page</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ <header>
+    <nav>
+        <h1>Crazy Fun Study Page 🎉</h1>
+        <p style="text-align: center;">Where learning meets laughter! 😆</p>
+        <ul>
+            <li><a href="index.htm">Home</a></li>
+            <li><a href="programming.html">programming</a></li>
+            <li><a href="scince.html">scince</a></li>
+            <li><a href="mathmatics.html">Mathmatics</a></li>
+            <li><a href="contact.html">Contact us</a></li>
+        </ul>
+        <h4>Officeally Designed By @pallakotarao</h4>
+    </nav>
+</header>
+
+
+  <main>
+    <section class="meme-section">
+      <h2>Today's Study Meme 😜</h2>
+      <img src="https://i.imgflip.com/4t0m5.jpg" alt="Funny Meme" class="meme">
+    </section>
+
+    <section class="joke-section">
+      <h2>Study Jokes for Smarties 🤓</h2>
+      <p id="joke">Why did the student eat his homework? Because the teacher told him it was a piece of cake! 🍰</p>
+      <button onclick="newJoke()">Get Another Joke!</button>
+    </section>
+
+    <section class="quiz-section">
+      <h2>Random Trivia Quiz 🧠</h2>
+      <div id="quiz-container">
+        <p id="question">What’s the chemical symbol for water?</p>
+        <button onclick="checkAnswer('A')">A) H2O</button>
+        <button onclick="checkAnswer('B')">B) CO2</button>
+        <button onclick="checkAnswer('C')">C) O2</button>
+      </div>
+      <p id="quiz-feedback"></p>
+    </section>
+  </main>
+
+  <footer class="crazy-footer">
+    <p>© 2024 Crazy Student Fun Page - Keep Laughing and Learning! 😎</p>
+  </footer>
+
+  <script src="script.js"></script>
+   
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Math Study</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #3f51b5;
+            color: white;
+            padding: 1em;
+            text-align: center;
+        }
+        main {
+            padding: 2em;
+        }
+        .section {
+            margin-bottom: 2em;
+        }
+        h2 {
+            color: #3f51b5;
+        }
+        .button {
+            background-color: #3f51b5;
+            color: white;
+            padding: 0.5em 1em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #303f9f;
+        }
+        .quiz, .geometry {
+            background-color: white;
+            padding: 1em;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .output {
+            background-color: #e8f5e9;
+            padding: 1em;
+            border-radius: 8px;
+            margin-top: 1em;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Fun Math Study</h1>
+    <p>Explore, Calculate, and Test Your Math Skills!</p>
+    <ul>
+        <li><a href="scince.html">Back Button</a></li>
+    </ul>
+</header>
+
+<main>
+    <!-- Mental Math Challenge -->
+    <div class="section quiz">
+        <h2>Mental Math Challenge</h2>
+        <p>What is 12 × 8?</p>
+        <button class="button" onclick="checkAnswer(96)">96</button>
+        <button class="button" onclick="checkAnswer(86)">86</button>
+        <button class="button" onclick="checkAnswer(106)">106</button>
+        <p id="quiz-result"></p>
+    </div>
+
+    <!-- Geometry Calculator -->
+    <div class="section geometry">
+        <h2>Geometry Calculator: Area of a Circle</h2>
+        <label for="radius">Enter Radius (cm):</label>
+        <input type="number" id="radius" min="1" placeholder="Radius">
+        <button class="button" onclick="calculateArea()">Calculate Area</button>
+        <div class="output" id="geometry-output">Result will appear here...</div>
+    </div>
+
+    <!-- Fun Math Facts -->
+    <div class="section">
+        <h2>Did You Know?</h2>
+        <ul>
+            <li>The number "pi" (π) never ends or repeats!</li>
+            <li>A "googol" is the number 1 followed by 100 zeros.</li>
+            <li>The Fibonacci sequence appears frequently in nature, such as in the arrangement of leaves and the spiral of shells.</li>
+        </ul>
+    </div>
+</main>
+
+<script>
+    // Mental Math Quiz
+    function checkAnswer(answer) {
+        const result = document.getElementById("quiz-result");
+        if (answer === 96) {
+            result.textContent = "Correct! 12 × 8 is 96.";
+            result.style.color = "green";
+        } else {
+            result.textContent = "Incorrect! Try again.";
+            result.style.color = "red";
+        }
+    }
+
+    // Geometry Calculator
+    function calculateArea() {
+        const radius = document.getElementById("radius").value;
+        if (radius > 0) {
+            const area = (Math.PI * Math.pow(radius, 2)).toFixed(2);
+            document.getElementById("geometry-output").innerText = `The area of the circle is ${area} cm².`;
+        } else {
+            document.getElementById("geometry-output").innerText = "Please enter a valid radius.";
+        }
+    }
+</script>
+
+</body>
+</html>
